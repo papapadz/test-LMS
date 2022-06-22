@@ -202,15 +202,10 @@ class QuizController extends Controller
             $fields = array(
                 //'control_num' => 'Control No.: '.$quiz->control_num,
                 'name' => $quiz->EmployeeQuiz->employee->firstname.$mi.$quiz->EmployeeQuiz->employee->lastname,
+                'date' => $cert_date->toFormattedDateString()
                 //'position' => $quiz->EmployeeQuiz->employee->position->position_title,
                 //'body' => 'for participating in the Basic Life Support Training held on the '.$cert_date->format('jS').' day of '.$cert_date->format('F Y').' at the Mariano Marcos Memorial Hospital and Medical Center Online Learning Management System.'
             );
-            if($quiz->EmployeeQuiz->course->id == 1)
-                $fields = array_merge($fields, [
-                    'control_num' => 'Control No.: '.$quiz->control_num,
-                    'position' => $quiz->EmployeeQuiz->employee->position->position_title,
-                    'body' => 'for participating in the Basic Life Support Training held on the '.$cert_date->format('jS').' day of '.$cert_date->format('F Y').' at the Mariano Marcos Memorial Hospital and Medical Center Online Learning Management System.'
-                ]);
             $pdf = new FPDM(public_path($cert));
             $pdf->Load($fields, true);
             $pdf->Merge();

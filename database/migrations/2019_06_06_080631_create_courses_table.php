@@ -24,6 +24,7 @@ class CreateCoursesTable extends Migration
             $table->string('course_image')->nullable();
             $table->string('course_cert',100);
             $table->boolean('needs_verification')->default(false);
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

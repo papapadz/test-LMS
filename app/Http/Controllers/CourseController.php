@@ -97,7 +97,7 @@ class CourseController extends Controller
         //     EmployeeCourse::firstOrcreate([
         //         'emp_id' => Auth::user()->emp_id, 'course_id' => $course->id, 'module_id' => $module->id
         //     ]);
-        Employee::updateOrCreate([
+        EmployeeCourse::updateOrCreate([
             'emp_id' => Auth::user()->emp_id, 'course_id' => $course->id,
         ],[
             'module_id' => $module->id
@@ -128,10 +128,10 @@ class CourseController extends Controller
                         } else
                             $arr_q = array_rand($random,5);
                     else if($module->module_type=='post')
-                        if(count($random)<15) {
+                        if(count($random)<5) {
                             $arr_q = $random;
                         } else
-                            $arr_q = array_rand($random,15);
+                            $arr_q = array_rand($random,5);
                     
                     foreach($arr_q as $r) {
                         $q = Quiz::find($r);

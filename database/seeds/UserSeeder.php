@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
 
         foreach($positions as $position) {
             Position::create([
-                'position_title' => $position->position_title
+                'position_title' => $position['position_title']
             ]);
         }
 
@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
 
         foreach($departments as $department) {
             Department::create([
-                'department' => $position->department
+                'department' => $department['department']
             ]);
         }
 
@@ -52,7 +52,7 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            'emp_id' => '12345',
+            'emp_id' => '123456',
             'password' => bcrypt('password'),
             'role' => 1,
             'email' => 'binarybee.solutions@gmail.com'
