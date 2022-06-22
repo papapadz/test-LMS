@@ -129,7 +129,7 @@
                   <div class="card">
                     <div class="card-body">
                       <div class="d-flex flex-column align-items-center text-center">
-                        <img src="https://hris.mmmhmc.net/images/{{ $user->employee->profile_pic }}" alt="Admin" class="rounded-circle" width="150">
+                        <img src="https://picsum.photos/id/{{ $user->id }}/200/200" alt="Admin" class="rounded-circle" width="150">
                         <div class="mt-3">
                           <h4>{{ $user->emp_id }}</h4>
                           <p class="text-secondary mb-1">{{ $user->employee->position->position_title }}</p>
@@ -259,9 +259,6 @@
     
                 </div>
               </div>
-              <div class="row justify-content-center">
-                <i><small>This Learning Management System is developed by <a href="https://fb.me/binarybee.solutions">Binary Bee IT Solutions</a></small></i>
-            </div>
 </div>
 
 <!-- Modal -->
