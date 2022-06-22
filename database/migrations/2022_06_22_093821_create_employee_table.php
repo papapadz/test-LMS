@@ -21,6 +21,7 @@ class CreateEmployeeTable extends Migration
             $table->date('birthdate');
             $table->string('email',100);
             $table->bigInteger('position_id');
+            $table->bigInteger('department_id');
             $table->timestamps();
         });
     }

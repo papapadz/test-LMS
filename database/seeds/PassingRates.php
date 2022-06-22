@@ -17,17 +17,5 @@ class PassingRates extends Seeder
             'attempt' => 1,
             'score' => 75
         ]);
-
-        QuizPassingRate::create([
-            'course_id' => 1,
-            'attempt' => 2,
-            'score' => 80
-        ]);
-
-        QuizPassingRate::create([
-            'course_id' => 1,
-            'attempt' => 3,
-            'score' => 85
-        ]);
     }
 }

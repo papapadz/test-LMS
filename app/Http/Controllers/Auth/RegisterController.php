@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Employee;
+use App\Position;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -41,6 +42,11 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function showRegistrationForm()
+    {
+        return view('auth.register')->with('positions',Position::orderBy('position_title')->get());
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -50,7 +56,13 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'emp_id' => ['required', 'string', 'max:255','unique:users','exists:mysql_hris.tbl_employee'],
+            'emp_id' => ['required', 'string', 'min:6','unique:users'],
+            'firstname' => ['required'],
+            'lastame' => ['required'],
+            'birthdate' => ['required'],
+            'email' => ['required','unique:users'],
+            'position' => ['required'],
+            'department' => ['required'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
             
@@ -64,6 +76,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        Employee::create([
+            'emp_id' => $data['emp_id'],
+            'firstname' => $data['firstname'],
+            'middlename' => $data['middlename'],
+            'lastname' => $data['lastname'],
+            'birthdate' => $data['birthdate'],
+            'email' => $data['email'],
+            'position_id' => $data['position'],
+            'department_id' => $data['department'],
+        ]);
+
         return User::create([
             'emp_id' => $data['emp_id'],
             'password' => Hash::make($data['password']),

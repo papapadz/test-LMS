@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => 'MMMH&MC-LMS',
+    'name' => 'LMS',
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => 'https://lms.mmmhmc.net',
+    'url' => 'localhost',
 
     'asset_url' => env('ASSET_URL', null),
 
