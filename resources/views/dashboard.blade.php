@@ -20,7 +20,7 @@
             <div class="container">
                 <font color="white"><h1 class="jumbotron-heading">Learning Management System</h1>
                 <p class="lead text-muted"></p>
-                <p>The Learning Management System of Mariano Marcos Memorial Hospital and Medical Center provides employees with virtual and online learning experience. It provides them with learning materials anywhere and with ease. Select any course available and start learning.</p>
+                <p>Eget lorem dolor sed viverra ipsum. Enim tortor at auctor urna. Libero enim sed faucibus turpis in eu. Laoreet non curabitur gravida arcu ac tortor dignissim. Pellentesque adipiscing commodo elit at imperdiet. Morbi leo urna molestie at elementum eu facilisis sed odio. Nec feugiat in fermentum posuere urna nec tincidunt praesent. Semper feugiat nibh sed pulvinar. Euismod quis viverra nibh cras pulvinar mattis nunc sed blandit. Etiam dignissim diam quis enim. Sagittis purus sit amet volutpat consequat mauris nunc congue. Eu facilisis sed odio morbi quis commodo. Pellentesque sit amet porttitor eget dolor morbi non arcu.</p>
                 </font>
             </div>
         </section>
