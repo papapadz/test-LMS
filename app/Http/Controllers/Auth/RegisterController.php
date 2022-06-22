@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use App\Employee;
 use App\Position;
+use App\Department;
+use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -44,7 +46,10 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        return view('auth.register')->with('positions',Position::orderBy('position_title')->get());
+        return view('auth.register')->with([
+            'positions'=>Position::get(),
+            'departments'=>Department::orderBy('department')->get()
+        ]);
     }
 
     /**
@@ -58,12 +63,12 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'emp_id' => ['required', 'string', 'min:6','unique:users'],
             'firstname' => ['required'],
-            'lastame' => ['required'],
+            'lastname' => ['required'],
             'birthdate' => ['required'],
             'email' => ['required','unique:users'],
             'position' => ['required'],
             'department' => ['required'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'min:8', 'confirmed'],
         ]);
             
     }
@@ -81,7 +86,7 @@ class RegisterController extends Controller
             'firstname' => $data['firstname'],
             'middlename' => $data['middlename'],
             'lastname' => $data['lastname'],
-            'birthdate' => $data['birthdate'],
+            'birthdate' => Carbon::parse($data['birthdate'])->toDateString(),
             'email' => $data['email'],
             'position_id' => $data['position'],
             'department_id' => $data['department'],
@@ -90,7 +95,8 @@ class RegisterController extends Controller
         return User::create([
             'emp_id' => $data['emp_id'],
             'password' => Hash::make($data['password']),
-            'email' => Employee::find($data['emp_id'])->email
+            'email' => $data['email'],
+            'role' => 0
         ]);
     }
 }

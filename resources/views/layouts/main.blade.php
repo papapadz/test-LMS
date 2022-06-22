@@ -126,6 +126,9 @@
           </nav>
     </header>
     @yield('content')
+    <div class="row justify-content-center">
+        <i><small>This Learning Management System is developed by <a href="https://fb.me/binarybee.solutions">Binary Bee IT Solutions</a></small></i>
+    </div>
 </body>
 
 

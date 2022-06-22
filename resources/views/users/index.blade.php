@@ -208,15 +208,6 @@
                       </div>
                       <hr>
                       <div class="row">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0">Mobile</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                            {{ $user->employee->mobile_no }} 
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="row">
                         <div class="col-sm-12">
                           <button class="btn btn-info" onclick="showModal(2)">Update Password</button>
                         </div>
@@ -268,6 +259,9 @@
     
                 </div>
               </div>
+              <div class="row justify-content-center">
+                <i><small>This Learning Management System is developed by <a href="https://fb.me/binarybee.solutions">Binary Bee IT Solutions</a></small></i>
+            </div>
 </div>
 
 <!-- Modal -->

@@ -13,7 +13,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Learners ID Number') }}</label>
+                            <label for="emp_id" class="col-md-4 col-form-label text-md-right">{{ __('Learners ID Number') }}</label>
 
                             <div class="col-md-6">
                                 <input id="emp_id" type="text" class="form-control @error('emp_id') is-invalid @enderror" name="emp_id" value="{{ old('emp_id') }}" required autocomplete="emp_id">
@@ -30,7 +30,7 @@
                             <label for="firstname" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" required>
+                                <input value="{{ old('firstname') }}" id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" required>
 
                                 @error('firstname')
                                     <span class="invalid-feedback" role="alert">
@@ -44,7 +44,7 @@
                             <label for="middlename" class="col-md-4 col-form-label text-md-right">{{ __('Middle Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="middlename" type="text" class="form-control @error('middlename') is-invalid @enderror" name="middlename">
+                                <input value="{{ old('middlename') }}" id="middlename" type="text" class="form-control @error('middlename') is-invalid @enderror" name="middlename">
 
                                 @error('middlename')
                                     <span class="invalid-feedback" role="alert">
@@ -58,7 +58,7 @@
                             <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" required>
+                                <input value="{{ old('lastname') }}" id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" required>
 
                                 @error('lastname')
                                     <span class="invalid-feedback" role="alert">
@@ -72,7 +72,7 @@
                             <label for="birthdate" class="col-md-4 col-form-label text-md-right">{{ __('Birthday') }}</label>
 
                             <div class="col-md-6">
-                                <input id="birthdate" type="date" class="form-control @error('birthdate') is-invalid @enderror" name="birthdate" required>
+                                <input value="{{ old('birthdate') }}" id="birthdate" type="date" class="form-control @error('birthdate') is-invalid @enderror" name="birthdate" required>
 
                                 @error('birthdate')
                                     <span class="invalid-feedback" role="alert">
@@ -86,7 +86,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="birthdate" required>
+                                <input value="{{ old('email') }}" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" required>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -163,6 +163,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row justify-content-center">
+        <i><small>This Learning Management System is developed by <a href="https://fb.me/binarybee.solutions">Binary Bee IT Solutions</a></small></i>
     </div>
 </div>
 @endsection
