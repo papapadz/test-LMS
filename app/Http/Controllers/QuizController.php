@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\EmployeeQuizAnswers;
 use App\EmployeeQuiz;
@@ -201,7 +202,7 @@ class QuizController extends Controller
             $mi = $quiz->EmployeeQuiz->employee->middlename ? ' '.$quiz->EmployeeQuiz->employee->middlename[0].'. ' : '';
             $fields = array(
                 //'control_num' => 'Control No.: '.$quiz->control_num,
-                'name' => $quiz->EmployeeQuiz->employee->firstname.$mi.$quiz->EmployeeQuiz->employee->lastname,
+                'name' => Str::upper($quiz->EmployeeQuiz->employee->firstname.$mi.$quiz->EmployeeQuiz->employee->lastname),
                 'date' => $cert_date->toFormattedDateString()
                 //'position' => $quiz->EmployeeQuiz->employee->position->position_title,
                 //'body' => 'for participating in the Basic Life Support Training held on the '.$cert_date->format('jS').' day of '.$cert_date->format('F Y').' at the Mariano Marcos Memorial Hospital and Medical Center Online Learning Management System.'

@@ -24,7 +24,7 @@ class CourseSeeder extends Seeder
             'content' => '<p><b>Hello!&nbsp;</b></p><p>Neque egestas congue quisque egestas diam in arcu cursus euismod. Natoque penatibus et magnis dis parturient montes nascetur. Cras tincidunt lobortis feugiat vivamus at. Gravida dictum fusce ut placerat orci nulla pellentesque dignissim. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus. Proin fermentum leo vel orci porta. Neque sodales ut etiam sit amet nisl purus in. Ullamcorper velit sed ullamcorper morbi tincidunt ornare. Augue lacus viverra vitae congue</p>',
             'post_notes' => '<p><b>Congratulations!&nbsp;</b></p><p>Neque egestas congue quisque egestas diam in arcu cursus euismod. Natoque penatibus et magnis dis parturient montes nascetur. Cras tincidunt lobortis feugiat vivamus at. Gravida dictum fusce ut placerat orci nulla pellentesque dignissim. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus. Proin fermentum leo vel orci porta. Neque sodales ut etiam sit amet nisl purus in. Ullamcorper velit sed ullamcorper morbi tincidunt ornare. Augue lacus viverra vitae congue</p>',
             'course_image' => 'asdasd.jpg',
-            'course_cert' => 'cert-test-c.pdf'
+            'course_cert' => 'template\cert-test-c.pdf'
         ]);
         
         $modules = [
