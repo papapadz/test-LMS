@@ -22,5 +22,4 @@
 
 <hr>
 <i>*This is an auto generated message, do not reply </i>
-<i>*For inquiries, contact IHOMP Unit Office at local 4112</i>
 @endcomponent
